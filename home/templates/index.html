@@ -1,10 +1,13 @@
-{% extends 'homebase.html' %}
-
-{% block title %} {{ setting.title }} {% endblock %}
-{% block description %} {{ setting.description }} {% endblock %}
-{% block keywords %} {{ setting.keywords }} {% endblock %}
-{% block google %} {{ setting.title }} {% endblock %}
+{% extends 'base/homebase.html' %}
+{% block header %} {% include 'base/header2.html' %} {% endblock %}
 
 
-{% block slider %} {% include 'slider.html' %} {% endblock %}
+{% for rs in setting %}
+
+{% block title %} {{ rs.title }} {% endblock %}
+{% block description %} {{ rs.description }} {% endblock %}
+{% block keywords %} {{ rs.keywords }} {% endblock %}
+
+{% endfor %}
+
 {% block body %} {% include 'content.html' %}  {% endblock %}
