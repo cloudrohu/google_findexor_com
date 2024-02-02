@@ -148,8 +148,8 @@ class Company(models.Model):
     contact_person = models.CharField(max_length=255,null=True , blank=True)
     contact_no = models.CharField(max_length=255,null=True , blank=True)
     email = models.EmailField(null=True,blank=True)
-    city = models.ForeignKey(City, on_delete=models.CASCADE,null=True,blank=True) #many to one relation with Brand     
-    locality = models.ForeignKey(Locality, on_delete=models.CASCADE,null=True,blank=True) #many to one relation with Brand 
+    city = models.ForeignKey(City, on_delete=models.CASCADE) #many to one relation with Brand     
+    locality = models.ForeignKey(Locality, on_delete=models.CASCADE) #many to one relation with Brand 
     address = models.CharField(max_length=500,null=True , blank=True)
     keywords = models.CharField(max_length=255,null=True , blank=True)
     website = models.CharField(max_length=255,null=True , blank=True)
