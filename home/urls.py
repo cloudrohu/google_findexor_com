@@ -7,4 +7,7 @@ from .import views
 urlpatterns = [
     path('', views.index, name='index'),
     
+    path('company', views.company, name='company'),
+    path('<slug:slug>', views.company_detail, name='company_detail'),
+
 ]

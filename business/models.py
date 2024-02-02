@@ -172,11 +172,14 @@ class Company(models.Model):
         return self.title
     
     def save(self , *args , **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title + '--' + self.locality.title + '--' + self.city.title)
         super(Company ,self).save(*args , **kwargs)
 
     class Meta:
         verbose_name_plural='1. Company'
+
+    class Meta:
+        db_table = "business_Company"
 
     def get_absolute_url(self):
         return reverse('company_detail', kwargs={'slug': self.slug})
